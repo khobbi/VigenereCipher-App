@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">Vigenere Cipher</string>
+    <string name="key">Key:</string>
+    <string name="encode">Encode</string>
+    <string name="decode">Decode</string>
+    <string name="message">Message</string>
+    <string name="ciphertext">CipherText</string>
+    <string name="number">Number</string>
+</resources>

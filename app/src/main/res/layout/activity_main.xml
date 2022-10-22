@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16dp"
+    tools:context=".MainActivity">
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/tilMessage"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/message"
+        app:errorEnabled="true"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" >
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/tieMessage"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:gravity="start|top"
+            android:textSize="14sp"/>
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/key"
+        android:textSize="16sp"
+        android:textColor="?colorOnBackground"
+        app:layout_constraintBottom_toBottomOf="@+id/etKey"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/etKey" />
+
+    <EditText
+        android:id="@+id/etKey"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:textSize="16sp"
+        android:inputType="number"
+        app:errorEnabled="true"
+        android:layout_marginEnd="10dp"
+        app:layout_constraintEnd_toStartOf="@+id/rgKeyType"
+        app:layout_constraintStart_toEndOf="@+id/textView2"
+        app:layout_constraintTop_toBottomOf="@+id/tilMessage" />
+
+    <RadioGroup
+        android:id="@+id/rgKeyType"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="@+id/etKey"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/etKey">
+
+        <RadioButton
+            android:id="@+id/radNumber"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:checked="true"
+            android:layout_marginEnd="10dp"
+            android:text="@string/number" />
+
+        <RadioButton
+            android:id="@+id/radText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Text" />
+    </RadioGroup>
+
+    <RadioGroup
+        android:id="@+id/rgOpType"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="10dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/etKey">
+
+        <RadioButton android:id="@+id/radEncode"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:checked="true"
+            android:layout_marginEnd="10dp"
+            android:text="@string/encode" />
+        <RadioButton android:id="@+id/radDecode"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/decode" />
+    </RadioGroup>
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btnConvert"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/encode"
+        android:layout_marginTop="10dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/etKey" />
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/tilCipherText"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/ciphertext"
+        android:layout_marginTop="20dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnConvert">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/tieCipherText"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:gravity="start|top"
+            android:textSize="14sp" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
