@@ -4,6 +4,7 @@ import android.content.Context
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.text.InputType
+import android.text.method.TransformationMethod
 import android.view.View
 import android.view.inputmethod.InputMethodManager
 import com.edon.vigenerecipher.classes.CryptEngine
@@ -19,7 +20,7 @@ class MainActivity : AppCompatActivity() {
         bnd = ActivityMainBinding.inflate(layoutInflater)
         setContentView(bnd.root)
 
-        //onclick listener for type of key
+        //onclick listener for type of key (number or alphabet)
         bnd.rgKeyType.setOnCheckedChangeListener { _, checkedId ->
             when(checkedId){
                 R.id.radNumber -> {

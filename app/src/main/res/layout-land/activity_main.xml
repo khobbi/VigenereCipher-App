@@ -5,16 +5,19 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:padding="16dp"
+    android:background="@drawable/background_gradient"
     tools:context=".MainActivity">
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/tilMessage"
-        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        style="@style/forTextBottonContainer"
         android:layout_width="0dp"
-        android:layout_height="wrap_content"
+        android:layout_height="0dp"
         android:layout_marginEnd="8dp"
+        android:layout_marginTop="10dp"
         android:hint="@string/message"
         app:errorEnabled="true"
+        app:layout_constraintBottom_toTopOf="@id/etKey"
         app:layout_constraintEnd_toStartOf="@+id/tilCipherText"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
@@ -23,8 +26,9 @@
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/tieMessage"
             android:layout_width="match_parent"
-            android:layout_height="100dp"
+            android:layout_height="match_parent"
             android:gravity="start|top"
+            style="@style/forTextBox"
             android:textSize="14sp" />
     </com.google.android.material.textfield.TextInputLayout>
 
@@ -46,6 +50,8 @@
         android:layout_marginTop="8dp"
         android:inputType="number"
         android:textSize="16sp"
+        android:textColor="@color/grey1"
+        app:errorTextColor="?colorError"
         app:errorEnabled="true"
         app:layout_constraintEnd_toStartOf="@+id/rgOpType"
         app:layout_constraintHorizontal_bias="0.5"
@@ -57,7 +63,9 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
+        android:layout_marginBottom="10dp"
         android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/etKey">
 
@@ -67,12 +75,14 @@
             android:layout_height="wrap_content"
             android:layout_marginEnd="10dp"
             android:checked="true"
+            android:textColor="@color/grey1"
             android:text="@string/number" />
 
         <RadioButton
             android:id="@+id/radText"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:textColor="@color/grey1"
             android:text="Text" />
     </RadioGroup>
 
@@ -93,6 +103,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginEnd="10dp"
+            android:textColor="@color/grey1"
             android:checked="true"
             android:text="@string/encode" />
 
@@ -100,6 +111,7 @@
             android:id="@+id/radDecode"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:textColor="@color/grey1"
             android:text="@string/decode" />
     </RadioGroup>
 
@@ -108,17 +120,21 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/encode"
+        style="@style/forButton"
         app:layout_constraintBottom_toBottomOf="@+id/rgKeyType"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="@+id/rgKeyType" />
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/tilCipherText"
-        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        style="@style/forTextBottonContainer"
         android:layout_width="0dp"
-        android:layout_height="wrap_content"
+        android:layout_height="0dp"
         android:layout_marginStart="8dp"
+        android:layout_marginTop="10dp"
         android:hint="@string/ciphertext"
+        app:errorEnabled="true"
+        app:layout_constraintBottom_toBottomOf="@+id/tilMessage"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toEndOf="@+id/tilMessage"
@@ -126,8 +142,9 @@
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/tieCipherText"
+            style="@style/forTextBox"
             android:layout_width="match_parent"
-            android:layout_height="100dp"
+            android:layout_height="match_parent"
             android:gravity="start|top"
             android:textSize="14sp" />
     </com.google.android.material.textfield.TextInputLayout>
